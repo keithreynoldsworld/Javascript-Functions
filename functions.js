@@ -6,9 +6,20 @@
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+
+
 function checkData(inputString) {
-	// your code goes here
-}
+		if(typeof inputString !== "string"){throw('Invalid Input');}
+		if(inputString.length === 3){return true;}
+		if(inputString.length > 3){return false;}
+		if(inputString.length < 3){return false;}
+		;}
+
+
+
+
+
+
 
 /*
  * PROBLEM `concatenateArrays`: (easy)
@@ -17,9 +28,46 @@ function checkData(inputString) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
-function concatenateArrays(a, b) {
-	// your code goes here
+
+
+
+function concatenateArrays(a,b){
+
+if(a.length>b.length){var apple = a.length;}
+if(a.length<=b.length){var apple = b.length;}
+
+if(Array.isArray(a) !== true){throw("Invalid Input");}
+
+if(Array.isArray(b) !== true){throw("Invalid Input");}
+
+
+
+
+for(var y = 0;y < (a.length);y++){if (a[y] % 1 !== 0){throw("Invalid Input");};}	
+for(var z = 0;z < (b.length);z++){if (b[z] % 1 !== 0){throw("Invalid Input");};}
+
+
+
+for (var i = 0; i <= b.length-1; i++){
+
+	a.push(b[i]);}
+return a;
+
 }
+
+//concatenateArrays([4,3,3,2,2.7],[4]);									
+ 	
+
+ 	
+
+
+
+
+
+
+
+
+
 
 /*
  * PROBLEM `fixProperNoun`: (easy)
@@ -30,9 +78,29 @@ function concatenateArrays(a, b) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+
+
+
+
 function fixProperNoun(noun) {
 	// your code goes here
-}
+if(typeof noun !== "string"){throw('Invalid Input');}
+//if(noun = ''){throw('Invalid Input');}
+
+if(noun.length==0){throw('Invalid Input');}
+
+
+
+return noun.charAt(0,1).toUpperCase() + noun.slice(1,(noun.length)).toLowerCase();
+
+
+};
+
+fixProperNoun("kEith");
+
+
+
+
 
 /*
  * PROBLEM `sortLetters`: (easy)
@@ -41,9 +109,22 @@ function fixProperNoun(noun) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+
+
 function sortLetters(inputString) {
-	// your code goes here
-}
+if(typeof inputString !== "string"){throw('Invalid Input');}
+
+
+//if(inputString.length===0){throw('Invalid Input');}
+
+var keithisawesome = inputString.split("");
+austintexas = keithisawesome.sort();
+console.log(austintexas);
+var houston = austintexas.join("");
+return houston;
+};
+
+sortLetters("people");
 
 /*
  * PROBLEM `absVal`: (easy)
@@ -53,8 +134,25 @@ function sortLetters(inputString) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 function absVal(integer) {
+if(integer%1 !== 0){throw "Invalid Input";}
+if(typeof(integer) === "object"){throw "Invalid Input";}
+if(!String(integer).trim()===true){throw "Invalid Input";}
+if(parseInt.integer === null){throw "Invalid Input";}
+//if((!a.trim()) == ''){throw "Invalid Input";}
+//var cow = integer.match(/[a-z]/i);
+//if (cow !== null){throw "Invalid Input";}
+if(String(integer).match(/[a-z]/i) !== null){throw "Invalid Input";} 	
+if(integer<0){integer=0-integer;}
+var b = parseInt(integer);
+if(typeof(b) !== "number"){throw "Invalid Input";}
+if(typeof(b) === NaN){throw "Invalid Input";}
+return b;
+
+
+
+
 	// your code goes here
-}
+};absVal(7);
 
 /*
  * PROBLEM `myMin`: (easy)
@@ -63,6 +161,20 @@ function absVal(integer) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+
+function myMin(a,b){
+
+if(a%1 !== 0){throw "Invalid Input";}
+if(b%1 !== 0){throw "Invalid Input";}
+if(!String(a).trim()===true){throw "Invalid Input";}
+if(!String(b).trim()===true){throw "Invalid Input";}
+if(a === null){throw "Invalid Input";}
+if(b === null){throw "Invalid Input";}
+
+if(a<=b){return(a);}
+if(a>b){return(b);}
+
+};
 
 /*
  * PROBLEM `myMax`: (easy) - Actual Interview Question
@@ -73,6 +185,36 @@ function absVal(integer) {
  *
  * Insane mode: do this without using a for loop.
  */
+
+ function myMax(a){
+
+if(typeof(a)!=="object"){throw "Invalid Input";}
+ //	for(var a = 0;(a < pickles.length - 1);a++){}
+//if(!Object(a)===true){throw "Invalid Input";}
+
+if(a==(null)){throw "Invalid Input";}
+if(a==(undefined)){throw "Invalid Input";}
+if(a==(NaN)){throw "Invalid Input";}
+if(Object.keys(a).length === 0){throw "Invalid Input"};
+
+//if(typeof(a[0])==="string"){throw "Invalid Input";}
+//if(typeof(a[1])==="string"){throw "Invalid Input";}
+//if(typeof(a[2])==="string"){throw "Invalid Input";}
+for(var m = 0;m<a.length;m++){if(typeof(a[m])=== "string"){throw "Invalid Input";} ;}
+for(var f = 0;f<a.length;f++){if(a[f]%1!==0){throw "Invalid Input";} ;}
+var couch = Math.max.apply(null,a);
+return couch;
+
+
+}; myMax([1,2,3,4.5]);
+
+
+
+ 
+
+
+
+
 
 /*
  * PROBLEM `getMonth`: (easy)
@@ -86,11 +228,44 @@ function absVal(integer) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 
+function getMonth(a){
+
+
+if(a===1){return"January";}
+if(a===2){return"February";}
+if(a===3){return"March";}
+if(a===4){return"April";}
+if(a===5){return"May";}
+if(a===6){return"June";}
+else if(a===7){return"July";}
+else if(a===8){return"August";}
+else if(a===9){return"September";}
+else if(a===10){return"October";}
+else if(a===11){return"November";}
+else if(a===12){return"December";}
+else {throw "Invalid Input";}
+};
+
+
+
+
+
 /*
  * PROBLEM `randomElement`: (medium)
  * Create a function called `randomElement` that takes an array of values and
  * returns one randomly selected value from that array.
  */
+
+
+function randomElement(a){
+	if(typeof(a)!=="object"){throw "Invalid Input";}
+	if(Object.keys(a).length === 0){throw "Invalid Input"};
+
+	var keithIsCool = a[Math.floor(Math.random()*a.length)];
+	return keithIsCool;
+
+};randomElement([1,2,3,4,5,6,7]);
+
 
 /*
  * PROBLEM `studentPairs`: (medium)
@@ -98,6 +273,24 @@ function absVal(integer) {
  * student names and returns an array of randomly selected pairs of students
  * (array of arrays).
  */
+
+function studentPairs(a){
+
+	if(typeof(a)!=="object"){throw "Invalid Input";}
+	if(Object.keys(a).length === 0){throw "Invalid Input"};
+
+	var keithIsCool = 0;
+	var keithIsFat = 0;
+	for(var m = 0;a.keithIsCool!==keithIsFat;m++){
+		keithIsCool = a[Math.floor(Math.random()*a.length)];
+		keithIsFat = a[Math.floor(Math.random()*a.length)];
+		if(keithIsCool!==keithIsFat){return keithIsCool+" "+keithIsFat;} 
+	;}
+
+};studentPairs(["keith","x","asdfasd","asdfadfs","duke"]);
+
+
+
 
 /*
  * PROBLEM `sumSquares`: (medium)
@@ -107,6 +300,31 @@ function absVal(integer) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 
+function sumSquares(a){
+
+//	if(String.a.test(/[^0-9]/g) === true){throw "Invalid Input";}
+	if(isNaN(a) === true){throw "Invalid Input";}
+	if(a%1 !== 0){throw "Invalid Input";}
+	if(a===(null)){throw "Invalid Input";}
+	//if(a===(NaN)){throw "Invalid Input";}
+	if(a===(undefined)){throw "Invalid Input";}
+	if(typeof(a)!=="number"){throw "Invalid Input";}
+
+	if(a<1){throw "Invalid Input";}
+	
+	var sum = 0;
+	for(var m=0;m<a+1;m++){
+		sum = sum+m*m;
+		if(m===a){return sum;}
+	;}
+
+
+};sumSquares(NaN);
+
+
+
+
+
 /* 
  * PROBLEM `findMaxDiff`: (medium)
  * Given an array of integers, write a function called `findMaxDiff` that finds
@@ -114,6 +332,37 @@ function absVal(integer) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+function findMaxDiff(a){
+//if(isNaN(a) === true){throw "Invalid Input";}
+if(a===(null)){throw "Invalid Input";}
+
+	if(typeof(a)!=="object"){throw "Invalid Input";}
+if(Object.getOwnPropertyNames(a).length === 0){throw "Invalid Input";}
+if(a.length===0){return 0;}
+if(a.length===1){return 0;}
+
+	//if(a===(NaN)){throw "Invalid Input";}
+	if(a===(undefined)){throw "Invalid Input";}
+for(var m = 0;m<a.length;m++){
+
+if(typeof(a[m])!=="number"){throw "Invalid Input";}
+if(a[m]%1!==0){throw "Invalid Input";}
+
+}
+
+
+var d = [];
+for(var m=0;m<a.length-1;m++){d.push(a[m]-a[m+1]);d.push(a[m+1]-a[m]);}
+	
+
+var couch = Math.max.apply(null,d);
+return Math.abs(couch);
+
+
+}; findMaxDiff([7,3]);
+
+
+
 
 /*
  * PROBLEM `insertDashes`: (medium)
@@ -123,6 +372,29 @@ function absVal(integer) {
  *
  * If the input is invalid throw an 'Invalid Input' exception.
  */
+function insertDashes(a){
+
+if(typeof(a)!=="string"){throw "Invalid Input";}
+
+
+
+var res = a.split("",a.length);
+
+var energy = res.join("-");
+
+
+
+var abcd = energy.replace(/- -/g, ' ');
+return abcd;
+
+   // var iron = a.replace('', '-');
+   // return iron;
+	//var res = a.split("",a.length);
+	//console.log(res);
+
+};insertDashes('abba test goober');
+
+
 
 /* 
  * PROBLEM `mySubstring`mySubstring: (medium)
@@ -136,6 +408,27 @@ function absVal(integer) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 
+function mySubstring(a,b,c){
+
+if(typeof(a)!=="string"){throw "Invalid Input";}
+
+if(a.length===0){throw "Invalid Input";}
+if(a.length===1){throw "Invalid Input";}
+	var superman = a.split("");
+	var newString = []
+	for(var m=b;m<=c;m++){newString.push(superman[m])};
+	return newString.join("");
+
+
+};mySubstring("obfiscation",3,8);
+
+
+
+
+
+
+
+
 /*
  * PROBLEM `splitSwap`: (medium)
  * Write a function called `splitSwap` that swaps two halves of a given array.
@@ -147,6 +440,39 @@ function absVal(integer) {
  * If the input is invalid throw an 'Invalid Input' exception.
  */
 
+function splitSwap(a){
+//	console.log(typeof(a));
+//if(Array.keys(a).length==0){return "[]";}
+//if(a==="[]"){return a;}
+
+if(typeof(a)!=="object"){throw "Invalid Input";}
+
+if(typeof(a)==="number"){throw "Invalid Input";}
+if(a === null){throw "Invalid Input";}
+if(a.String === "[]"){throw "[]";}
+if(Object.getOwnPropertyNames(a).length === 0){throw "Invalid Input";}
+//if(Object.keys((a).length) == 0){throw "Invalid Input";}
+if(a.length<2){return a;}
+if(a.length===2){var c = [];c.push(a[1]);c.push(a[0]);return c;}
+if(a.length===3){var p = [];p.push(a[1]);p.push(a[2]);p.push(a[0]);return p;}
+var house = a.slice(0,Math.floor(a.length/2));
+
+var boat = a.slice(Math.floor(a.length/2),((Math.floor(a.length/2))*2));
+
+
+var c = boat.concat(house);
+
+var last_element = a[a.length - 1];
+
+
+if(a.length%2!==0){c.splice(Math.floor(a.length/2), 0, last_element);}
+return c;
+
+//if(a.length%2!==0){var godzilla = c.push(a.splice((Math.floor((a.length/2),0,(-1)[0])));}
+//return godzilla;}
+									 
+};splitSwap([]);
+
 /*
  * PROBLEM `smallMultiples`: (medium)
  * For given n and k write a function called `smallMultiples` that returns the
@@ -156,7 +482,34 @@ function absVal(integer) {
  * greater than 4.
  *
  * If the input is invalid throw an 'Invalid Input' exception.
+
+
  */
+///-------- THIS FUNCTION WORKS CORRECTLY. SOMETHING IS WRONG WITH THE TEST
+function smallMultiples(n,k){
+if(Number.isNaN(k)){throw "Invalid Input";} 
+if(typeof(n)!=="number"){throw "Invalid Input";}
+if(typeof(k)!=="number"){throw "Invalid Input";}
+
+
+
+
+	var apple = [];
+	for(var m = 2;k*m<=n;m++){
+		
+			apple.push("happy");
+	//		if(m*k>=n){return apple;
+		
+	}
+	{return apple.length;}		        
+	//};
+
+
+};smallMultiples(1,NaN);
+
+
+
+
 
 /* 
  * PROBLEM `rot13`: (hard)
@@ -293,6 +646,5 @@ function absVal(integer) {
  *
  * Insane mode: do this without recursion.
  */
-
 
 
